@@ -3,5 +3,5 @@ Consiste-se numa lista simples de atividades diárias, em que o usuário cria, a
 <p>Nesse projeto houve pouco investimento em front end e foi um dos meus primeiros projetos com CRUD. Apesar de muito simples, tem valor sentimental, por ter sido meu primeiro CRUD e resolvi subir no GITHUB</p>
 
 
-![imagem7](https://user-images.githubusercontent.com/44949683/201730908-5e4b58e8-a92b-4025-bb6f-e9c1d0e870bf.png)
-![imagem8](https://user-images.githubusercontent.com/44949683/201730923-16c81919-507d-4857-a25e-4c2be331be66.png)
+![imagem7](https://user-images.githubusercontent.com/44949683/201731212-5aaabdff-7881-4d2f-96bd-3e6454dc2ab6.png)
+![imagem8](https://user-images.githubusercontent.com/44949683/201731224-8f301398-43a2-49e2-8126-ba44ef603c34.png)
