@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="../static/densidade.css">-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <!--<script type="text/javascript" src="../static/densi.js"></script>-->
+       
+        <div class="superinfo col text-center justify-content-center">
+            <h1>Lista de afazeres diários</h1>
+        </div>
+            
+        <section class="jumbotron justify-content-center container" style= "color: #0096FF">
+            <form action="{{ url_for('criar') }}" class="form-group" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label class="custom-label font-weight-bold" for="atividade">Insira sua atividade</label>
+                        <input type="text" class="form-control" placeholder="Insira sua atividade" name="atividade" id="atividade">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="status" class="font-weight-bold">Status da tarefa</label>
+                        <select class="form-control font-weight-bold" required id="status_lub" name="status">
+                            <option value="Não realizado" name="status">Não realizado</option>
+                            <option value="Feito" name="status">Feito</option>
+                        </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+
+        <section class="justify-content-center text-center container" style="background: white; color: #0096FF">
+            <h2 class="text-center justify-content-center">Lista de tarefas</h2>
+            <div class="text-center justify-content-center table-responsive">   
+                <table class="table table-striped table-bordered border border-dark text-center justify-content-center" id="tbPedidos" style="width: 100%">
+                    <thead style="width: 100%">
+                        <tr>
+                            <th>Atividade a realizar</th>
+                            <th>Status</th>
+                            <th>Edição</th>
+                            <th>Remoção</th>
+                        </tr>
+                    </thead>
+
+                    <tbody style="width: 100%">
+                        {% for i in lista %}
+                            <tr>
+                                <td>{{ i.atividade }}</td>
+                                <td>{{ i.status }}</td>
+                                <td><a href="{{ url_for('editar',ide=i.ide) }}">Editar</a></td>
+                                <td><a href="{{ url_for('deletar',ide=i.ide) }}">Remover</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

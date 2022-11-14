@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edição de tarefas</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="../static/densidade.css">-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <!--<script type="text/javascript" src="../static/densi.js"></script>-->
+        <div class="superinfo col text-center justify-content-center">
+            <h1>Edição de tarefa</h1>
+        </div>
+
+        <section class="my-3 jumbotron justify-content-center" style="background: white; color: #0096FF">
+            <div class="table-responsive justify-content-center" style="margin-top:20px">    
+                <form action="{{ url_for('atualizar') }}" method="post">
+                    <fieldset>
+                      <input type="hidden" name="ide" value="{{lista.ide}}">
+                      <div class="form-group">
+                        <label for="atividade">Tarefa</label>
+                        <input type="text" id="tarefa" name="atividade" class="form-control", value="{{lista.atividade}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="status">Status da tarefa</label>
+                        <select class="form-control" required id="status_lub" name="status">
+                            <option value="Não realizado" name="status">Não realizado</option>
+                            <option value="Feito" name="status">Feito</option>
+                        </select>
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+                     <a class="btn btn-danger btn-voltar" href="{{url_for('teste')}}">Voltar</a>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
